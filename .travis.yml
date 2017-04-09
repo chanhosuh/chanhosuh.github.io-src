@@ -4,6 +4,8 @@ branches:
   - master
 install:
 - pip install pelican ghp-import
+before_script:
+- pelican-themes -i ./themes/blue-penguin
 script:
 - make publish github
 env:
