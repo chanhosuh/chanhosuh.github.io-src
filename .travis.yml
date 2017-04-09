@@ -8,7 +8,9 @@ before_script:
 - pelican-themes -i ./themes/blue-penguin
 script:
 - make html
+- make publish
 after_success:
+- chmod +x deploy.sh
 - ./deploy.sh
 env:
   global:
