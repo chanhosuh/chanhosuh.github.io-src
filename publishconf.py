@@ -18,6 +18,8 @@ CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
 DELETE_OUTPUT_DIRECTORY = False
 
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}, 'extra/travis.yml': {'path': '.travis.yml'}}
+
 # Following items are often useful when publishing
 
 #DISQUS_SITENAME = ""
