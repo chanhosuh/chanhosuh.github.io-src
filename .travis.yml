@@ -3,7 +3,7 @@ branches:
   only:
   - master
 install:
-- pip install -r requirements.txt
+- pip install pelican ghp-import
 before_script:
 - pelican-themes -i ./theme/elegant
 script:
