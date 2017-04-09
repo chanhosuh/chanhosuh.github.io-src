@@ -1,0 +1,13 @@
+language: python
+branches:
+  only:
+  - source
+install:
+- pip install -r requirements.txt
+before_script:
+- pelican-themes -i ./theme/elegant
+script:
+- make publish github
+env:
+  global:
+  - secure: ebuvzbMDBTB6EWTZ5ngz3+GzBJSWLTE+tEgpzw+wpIkc3G2B/0MJ2dVNfiVViynw3iHWnJjta1C4AW+afpE8JR1qnkQyjhyO6i4501gBHaKCeHshEhjySTpw7W4aKH2JHWYryY50AI0+9MIjwuhlfB4U3MEY5G391qLNKOUuwXx3wlsnsgnRZ1FBANJHFdpLWI16Hnm7EytpiJmCt74iVTe0fzpwRRn2AbH1RGNIPF8T1xB0vMx5bRXu9XIQnYu/4q4unVyrPTQOY2SNu5qvS/UajZaycw3DpCSdlcgbw2XTC6DQQDlWV23aXKG8H8HWQwHQoHvK4HXzil4+mstqZPv5EuBZIHoBH7F1qpnnGiuAJRDlakOraPVKIaE22yF+ory55SnGJuZg95vSmAMeKfwnMPd3DGND5ipCskaINrWbvCtwLcyPHwLo+e5DpdS7RJsMreN7wdyVjdQO2y+WEWk1pEkiC/IGnO/ItoU+ZwmHKGgjA9rGFJrW7iwdhw3rVZnA/hroh6TXQhat8qnXOdrrbzW5tag4ObjXLmiCmD1UNzcJmJvs2XxLIytHujXXwX+FNGAylQ52C9WsMxIsCT0ErjVHjKM2AuQERn0t7nO40gf0jMJ2kX+TyHer++9GzJJTZxR/mhsA3q1Kn6rC5qkxUMzXL/K4PPAX6pPfheg=
