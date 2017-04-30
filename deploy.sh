@@ -20,3 +20,5 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     git push -fq origin $BRANCH > /dev/null
     echo -e "Deploy completed\n"
 fi
+
+# copied from Daniel Rodriguez (danielfrg.github.io-source); Apache license 2.0
