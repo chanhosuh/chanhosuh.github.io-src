@@ -12,6 +12,8 @@ TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
 
+DISPLAY_PAGES_ON_MENU = True
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -53,5 +55,5 @@ MENU_INTERNAL_PAGES = (
 
 # additional menu items
 MENUITEMS = (
-    ('About me', 'pages/about-me.html'),
+#     ('Github', 'https://github.com/'),
 )
