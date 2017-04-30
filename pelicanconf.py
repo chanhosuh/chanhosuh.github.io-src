@@ -12,8 +12,6 @@ TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
 
-DISPLAY_PAGES_ON_MENU = True
-
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -50,12 +48,10 @@ ARCHIVES_SAVE_AS   = 'archives/index.html'
 
 # use those if you want pelican standard pages to appear in your menu
 MENU_INTERNAL_PAGES = (
-#     ('Tags', TAGS_URL, TAGS_SAVE_AS),
-#     ('Authors', AUTHORS_URL, AUTHORS_SAVE_AS),
-#     ('Categories', CATEGORIES_URL, CATEGORIES_SAVE_AS),
     ('Archives', ARCHIVES_URL, ARCHIVES_SAVE_AS),
 )
+
 # additional menu items
 MENUITEMS = (
-#     ('Github', 'https://github.com/'),
+    ('About me', 'pages/about-me.html'),
 )
