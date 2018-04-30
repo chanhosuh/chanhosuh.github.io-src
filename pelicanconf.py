@@ -36,6 +36,22 @@ DEFAULT_PAGINATION = 10
 
 THEME = 'blue-penguin'
 
+
+#### MENU  #########
+# Menu item appearance and order is determined as follows:
+# home (if DISPLAY_HOME is True),
+# content from "pages" directory (if DISPLAY_PAGES_ON_MENU is True)
+# items in MENUITEMS
+# items in MENU_INTERNAL_PAGES
+DISPLAY_HOME = False
+DISPLAY_PAGES_ON_MENU = False
+
+MENUITEMS = (
+    ('Home', ''),
+    ('About Me', 'pages/about-me.html'),
+    ('Resume', 'pages/resume.html'),
+)
+
 # provided as examples, they make ‘clean’ urls. used by MENU_INTERNAL_PAGES.
 TAGS_URL           = 'tags'
 TAGS_SAVE_AS       = 'tags/index.html'
@@ -48,10 +64,6 @@ ARCHIVES_SAVE_AS   = 'archives/index.html'
 
 # use those if you want pelican standard pages to appear in your menu
 MENU_INTERNAL_PAGES = (
-    ('Archives', ARCHIVES_URL, ARCHIVES_SAVE_AS),
+    ('Blog', ARCHIVES_URL, ARCHIVES_SAVE_AS),
 )
 
-# additional menu items
-MENUITEMS = (
-#     ('Github', 'https://github.com/'),
-)
