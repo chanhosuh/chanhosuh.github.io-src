@@ -2,4 +2,4 @@ title: Home
 url:
 save_as: index.html
 
-This is the home page.
+Welcome to my tiny piece of the Internet.
