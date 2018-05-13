@@ -1,11 +1,13 @@
 Title:  Game-playing robots, AI, and the Singularity
 Date: 2017-6-24
-Category: Artificial Intelligence
+Category: Artificial Intelligence, Singularity, history, philosophy
 Status: draft
 
-Wasn't it only yesterday that Gary Kasparov was battling Deep Blue for human supremacy in chess?  It happened 20 years ago.  Today, you can go to Apple's App Store, download Stockfish, and it will easily defeat the average chess grandmaster, possibly even the champion Magnus Carlsen (to beat him with utter certainty you may need to run Stockfish on your desktop PC...).  
+It may be hard to imagine for those that grew up during the iPhone era, but over 20 years ago, the world was shocked when the human chess champion, Gary Kasparov, was defeated by a computer, IBM's Deep Blue, marking the end of human supremacy in chess.  Today, you can go to the Apple App Store, download Stockfish, and it will easily defeat a chess grandmaster, or even the champion Magnus Carlsen (marginally less easily).
 
-Of course, once AI accomplishes such a feat, people somehow realize chess wasn't that great a test of intelligence after all.  Obviously, we need to pick a more creative pursuit, like Go.  
+In hindsight, chess was too easy a test for computers.  Using that as a benchmark of machine intelligence was unwise.  No fundamental insight into intelligence was required, just purely technical research into extending computing power into the realm of tree searches.
+
+Obviously we need to pick something needing true human creativity.  Like Go (also known as baduk or weiqi). 
 
 In 2015, the best Go-playing program could not even beat a top amateur.  Go seemed safe from AI for at least a decade.  Then in 2016, Google Deepmind unveiled AlphaGo, a Go-playing engine relying upon deep learning (neural networks with more than several layers of neurons).  
 
