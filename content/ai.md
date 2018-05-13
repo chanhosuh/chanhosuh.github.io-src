@@ -1,7 +1,7 @@
-Title:  Game-playing robots, AI, and the Singularity
-Date: 2017-6-24
-Category: Artificial Intelligence, Singularity, history, philosophy
-Status: draft
+Title:  Game-playing robots, AI, and the Singularity  
+Date: 2017-6-24  
+Category: Artificial Intelligence, Singularity, history, philosophy  
+Status: draft  
 
 It may be hard to imagine for those that grew up during the iPhone era, but over 20 years ago, the world was shocked when the human chess champion, Gary Kasparov, was defeated by a computer, IBM's Deep Blue, marking the end of human supremacy in chess.  Today, you can go to the Apple App Store, download Stockfish, and it will easily defeat a chess grandmaster, or even the champion Magnus Carlsen (marginally less easily).
 

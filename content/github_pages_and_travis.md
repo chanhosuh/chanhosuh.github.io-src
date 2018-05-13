@@ -1,6 +1,6 @@
-Title:  Setting up a GitHub Pages site with Travis integration
-Date: 2017-4-30
-Category: blogging, GitHub Pages
+Title:  Setting up a GitHub Pages site with Travis integration  
+Date: 2017-4-30  
+Category: blogging, GitHub Pages  
 
 In the spirit of "it's better to get started on something trivial than procrastinate
 forever on something deep", my first post for this blog will be on
