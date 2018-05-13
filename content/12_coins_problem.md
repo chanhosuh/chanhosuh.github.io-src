@@ -1,7 +1,7 @@
 Title: 12 coins problem  
 Date: February 8, 2016  
 Modified: May 13, 2018  
-Categories: brainteasers, interview questions, information theory  
+Category: brainteasers, interview questions, information theory  
 Status: draft  
 
 
@@ -12,6 +12,56 @@ to determine the fake coin and whether it is light or heavier
 than a real coin.  You can weigh any group of coins against another
 using the scales to see which is heavier or if they balance, but
 you cannot measure the actual weights of the coins.
+
+I'd run across this problem in interview brainteaser collections
+but always found it mysterious: why 12 coins?  And how does this
+work out so beautifully?
+
+It turns out there is a nice way to think about it from the 
+viewpoint of information theory.  In information theory, information
+is measured in *bits*, and your ability to learn is limited by the
+amount of information available.  
+
+In our problem, the system we are learning about consists of 12 coins,
+with one being fake.  Since the fake coin can be one of 12 coins and
+the fake coin can have two states, light or heavy, there are 24
+possible states of the system.
+
+Each weighing gives one of three results (left side is heavier, 
+right side is heavier, both sides balance), a *trinary* "bit" of 
+information (called a **trit**).  Since there are three weighings, 
+our entire weighing process gives us three trits of information.
+In other words, we have 3^3 (=27) possible outcomes from our weighing
+process.
+
+Now we can see why *three* weighings are used in the problem.  Two 
+would have been impossible.  That would result in only 3^2 (=9) 
+outcomes, and we have 24 possible states.  There is no way we can 
+"invert" our process and deduce which state we started with.  With 
+three weighings, we have a chance, and four, we might guess makes 
+the problem too easy.  
+
+At this point, it helps to think more formally about the problem.
+Our weighing process with the three weighings are effectively an
+encoding scheme that codes the starting state of the system into
+a three letter codeword in the alphabet {O, L, R}.  "O" means 
+the two sides balance, "L" means the left side is heavier, and "R"
+means the right side is heavier.
+
+As we noted before, there are 27 possible codewords.  In order to
+find a solution the problem, we must be able to invert the encoding
+("decode uniquely") to obtain the starting state.  Invertibility
+imposes conditions.  For example, if two coins are always either off
+the scale or on the same side of a scale, there is no way to
+distinguish the states where one coin is fake from the other being
+fake.  In other words, in order to distinguish each starting state
+from another, we need to make sure no two coins follow each other
+around in our placement of the coins.
+
+In fact we need more than that.  We need to make sure no two coins
+mirror each other's movements; if two coins are always on opposite
+sides of one another, there is no way to distinguish which is the fake,
+as we don't know if the fake is heavy or light.
 
 The code we are constructing uses the alphabet { O, R, L } with
 each word being three letters, i.e. ORL, LLR, ROO...
@@ -67,26 +117,6 @@ coin which was placed according to the codeword (or its reflection).
 The above method of using codewords may appear mysterious at first
 glance, but follows entirely naturally from an information-theoretic
 viewpoint.
-
-The system we are learning about is 12 coins, with one being fake.
-Since the fake coin can be one of 12 coins and the fake coin can have
-two states, light or heavy, there are 24 possible states of the system.
-The placement method for the coins and the three weighings are
-effectively an encoding scheme that codes the starting state of the
-system into a three letter codeword as above.
-
-There are 27 possible codewords.  In order to find a solution the
-problem, we must be able to invert the encoding ("decode uniquely")
-to obtain the starting state.  Invertibility imposes conditions.
-For example, if two coins are always either off the scale or on the
-same side of a scale, there is no way to distinguish the states where
-one coin is fake from the other being fake.  In other words, in order
-to distinguish each starting state from another, we need to make sure
-no two coins follow each other around in our placement of the coins.
-In fact we need more than that.  We need to make sure no two coins
-mirror each other's movements; if two coins are always on opposite
-sides of one another, there is no way to distinguish which is the fake,
-as we don't know if the fake is heavy or light.
 
 These conditions on how the coins can be placed lead to the above
 conditions on the codewords.  In particular, in order for there to be
