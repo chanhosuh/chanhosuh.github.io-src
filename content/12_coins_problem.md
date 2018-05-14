@@ -2,7 +2,7 @@ Title: 12 coins problem
 Date: February 8, 2016  
 Modified: May 13, 2018  
 Category: brainteasers, interview questions, information theory  
-Status: draft  
+Status: published
 
 
 You are given 12 coins that look identical and a pair of scales.
@@ -46,49 +46,37 @@ Our weighing process with the three weighings are effectively an
 encoding scheme that codes the starting state of the system into
 a three letter codeword in the alphabet {O, L, R}.  "O" means 
 the two sides balance, "L" means the left side is heavier, and "R"
-means the right side is heavier.
+means the right side is heavier.  Examples of codewords are then 
+ORL, LLR, ROO.  
 
-As we noted before, there are 27 possible codewords.  In order to
-find a solution the problem, we must be able to invert the encoding
-("decode uniquely") to obtain the starting state.  Invertibility
-imposes conditions.  For example, if two coins are always either off
-the scale or on the same side of a scale, there is no way to
-distinguish the states where one coin is fake from the other being
-fake.  In other words, in order to distinguish each starting state
-from another, we need to make sure no two coins follow each other
-around in our placement of the coins.
+As we noted before, there are 27 possible codewords.  In order for
+the problem to have a solution, we must be able to invert the encoding
+("decode uniquely") to obtain the starting state.
 
-In fact we need more than that.  We need to make sure no two coins
-mirror each other's movements; if two coins are always on opposite
-sides of one another, there is no way to distinguish which is the fake,
-as we don't know if the fake is heavy or light.
+For example, we might get OLL as a resulting codeword of the
+weighing process.  This means the first weighing
+balanced the sides. In particular, the fake coin is off the scale.
+The second weighing pushed down the left side.  This means that
+(assuming the fake is heavier) the fake coin was on the left side
+of the scale.  The last weighing did the same, so the fake coin
+was again on the left side.  If the fake is lighter, then the
+conclusion is it was on the right sides for the last two weighings.
 
-The code we are constructing uses the alphabet { O, R, L } with
-each word being three letters, i.e. ORL, LLR, ROO...
+Whether the fake is heavier or lighter, it's clear the three
+weighings give a codeword which then corresponds exactly to a fake
+coin which was placed according to the codeword (or its reflection).
+Can there be another coin that "shadows" the fake coin, or "mirrors"
+it?  Nope, not if our solution actually works, because then we 
+wouldn't be able to deduce which coin is fake!
 
-The code must satisfy the following four conditions:
+Thus if we have the entire set of resulting 
+codewords for a working solution, that tells us the solution itself!
+Each codeword tells us where to place a corresponding coin on each
+weighing.  That corresponding coin is the one that is revealed as 
+fake if the codeword were to result. 
 
-    1. It does not contain OOO
-    2. It does not contain a pair of words that are reflections
-       of each other, e.g. LRR is the reflection of RLL, OLO is
-       the reflection of ORO, etc.
-    3. For each position 1-3, there are equal numbers of L's and
-       R's.
-
-Any such code determines a method of placing coins on the
-scales in the three weighings: we assign a coin to each codeword,
-e.g. coin #1 assigned to ORR.
-
-The letters give the location of the coin for each weighing:
-    - O means "off the scale"
-    - L means "on the left side of the scale"
-    - R means "on the right side of the scale"
-
-So coin #1 will be off the scale, then on the left side, and
-finally on the right side for the three weighings.
-
-The above conditions on the code then imply that our placement
-method satisfies the following:
+After thinking very carefully, it is clear we need to have the
+following:
 
     1. Every coin is placed on the scale for at least one
        weighing.
@@ -99,35 +87,36 @@ method satisfies the following:
     4. Each weighing places the same number of coins on each
        side of the scale.
 
-Now suppose we do the three weighings according to our placement
-method.
+The last is necessary if our procedure is to always find the fake coin
+since the fake coin can be any weight, as long as it is not equal to
+a real coin.  
 
-For example, we might get OLL.  This means the first weighing
-balanced the sides. In particular, the fake coin is off the scale.
-The second weighing pushed down the left side.  This means that
-(assuming the fake is heavier) the fake coin was on the left side
-of the scale.  The last weighing did the same, so the fake coin
-was again on the left side.  If the fake is lighter, then the
-conclusion is it was on the right sides for the last two weighings.
+The above conditions means the set of resulting codewords satisfy 
+the following:
 
-Whether the fake is heavier or lighter, it's clear the three
-weighings give a codeword which then corresponds exactly to the
-coin which was placed according to the codeword (or its reflection).
+    1. It does not contain OOO
+    2. It does not contain a pair of words that are reflections
+       of each other, e.g. LRR is the reflection of RLL, OLO is
+       the reflection of ORO, etc.
+    3. For each position 1-3, there are equal numbers of L's and
+       R's.
 
-The above method of using codewords may appear mysterious at first
-glance, but follows entirely naturally from an information-theoretic
-viewpoint.
+Once we find such a set of codewords, each codeword gives the
+location of the coin for each weighing:
 
-These conditions on how the coins can be placed lead to the above
-conditions on the codewords.  In particular, in order for there to be
+    - O means "off the scale"
+    - L means "on the left side of the scale"
+    - R means "on the right side of the scale"
+
+In particular, in order for there to be
 enough codewords to cover the 24 system states (and keeping in mind
 that we place the same number on each side of the scale) we must place
 four coins on each side of the scale at each weighing.  Any less and
 there wouldn't be enough codewords.  And there are not enough codewords
-to allow 5 or more to be weighed on each side (given the first letter,
+to allow 5 or more to be weighed on each side: given the first letter,
 there are only 9 words starting with R, and 9 starting with L, half of
 them are reflections and not allowed, so we really only have 9 allowable
-words to determine which coins get placed on a scale, but only an even
+words to determine which coins get placed on a scale.  But only an even
 number of coins can be placed on the scale (half on each side), so the
 most we can have is 4 on each side at a time.
 
@@ -140,7 +129,7 @@ Another nice thing about viewing the problem this way, is it lets us
 generalize to more coins and more weighings.  If we allow four weighings,
 what's the largest number of coins for which we can determine the fake
 coin?  With three weighings, we saw that 12 is the optimal number.
-Anymore, and we simplywould not have enough codewords.
+Anymore, and we simply would not have enough codewords.
 
 For four weighings, we have 3^4 = 81 possible codewords.  As before
 OOOO is not allowed, so that leaves us with 80 possibilities.  Again,
