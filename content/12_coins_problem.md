@@ -78,14 +78,14 @@ fake if the codeword were to result.
 After thinking very carefully, it is clear we need to have the
 following:
 
-    1. Every coin is placed on the scale for at least one
-       weighing.
-    2. No two coins are placed at the same location for every
-       weighing.
-    3. No two coins are placed on opposite sides and taken off
-       the scale together for every weighing.
-    4. Each weighing places the same number of coins on each
-       side of the scale.
+1. Every coin is placed on the scale for at least one
+   weighing.
+2. No two coins are placed at the same location for every
+   weighing.
+3. No two coins are placed on opposite sides and taken off
+   the scale together for every weighing.
+4. Each weighing places the same number of coins on each
+   side of the scale.
 
 The last is necessary if our procedure is to always find the fake coin
 since the fake coin can be any weight, as long as it is not equal to
@@ -94,19 +94,19 @@ a real coin.
 The above conditions means the set of resulting codewords satisfy 
 the following:
 
-    1. It does not contain OOO
-    2. It does not contain a pair of words that are reflections
-       of each other, e.g. LRR is the reflection of RLL, OLO is
-       the reflection of ORO, etc.
-    3. For each position 1-3, there are equal numbers of L's and
-       R's.
+1. It does not contain OOO
+2. It does not contain a pair of words that are reflections
+   of each other, e.g. LRR is the reflection of RLL, OLO is
+   the reflection of ORO, etc.
+3. For each position 1-3, there are equal numbers of L's and
+   R's.
 
 Once we find such a set of codewords, each codeword gives the
 location of the coin for each weighing:
 
-    - O means "off the scale"
-    - L means "on the left side of the scale"
-    - R means "on the right side of the scale"
+- O means "off the scale"
+- L means "on the left side of the scale"
+- R means "on the right side of the scale"
 
 In particular, in order for there to be
 enough codewords to cover the 24 system states (and keeping in mind
@@ -145,10 +145,10 @@ Going through this reasoning more rigorously and keeping track of the
 arithmetic, we conclude that the number of coins can be at most
 (3^n - 3) / 2 where n is the number of weighings.
 
-    - n = 3,  # coins = 12
-    - n = 4,  # coins = 39
-    - n = 5,  # coins = 120
-    - etc..
+- n = 3,  # coins = 12
+- n = 4,  # coins = 39
+- n = 5,  # coins = 120
+- etc..
 
 
 
