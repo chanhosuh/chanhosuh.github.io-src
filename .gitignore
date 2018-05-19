@@ -1,5 +1,13 @@
 *.pyc
-/.project
-/.pydevproject
-/.settings/
+
+# pelican
 output/
+*.pid
+
+# eclipse
+.project
+.pydevproject
+.settings/
+
+# vim
+*.swp
