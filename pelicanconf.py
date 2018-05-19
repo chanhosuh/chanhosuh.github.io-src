@@ -7,7 +7,13 @@ SITENAME = u'More Internet Clutter'
 SITEURL = ''
 
 PATH = 'content'
-STATIC_PATHS = ['images']
+STATIC_PATHS = [
+    'images',
+    'static',
+]
+EXTRA_PATH_METADATA = {
+    'static': {'path': 'static'},
+}
 
 TIMEZONE = 'America/New_York'
 
@@ -50,7 +56,6 @@ DISPLAY_PAGES_ON_MENU = False
 MENUITEMS = (
     ('Home', '/'),
     ('About Me', '/pages/about-me.html'),
-    ('Resume', '/pages/resume.html'),
 )
 
 # provided as examples, they make ‘clean’ urls. used by MENU_INTERNAL_PAGES.
