@@ -71,5 +71,10 @@ Descriptors
 - properties    
     
 
+Performance
+- bool versus len
+  - why does `not []` perform better than `len([]) == 0` ?
+- why is `len` so performant for built-ins?
+
 
 
