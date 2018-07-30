@@ -15,7 +15,9 @@ EXTRA_PATH_METADATA = {
     'static': {'path': 'static'},
 }
 
-READERS = {"html": None}
+ARTICLE_EXCLUDES = [
+    'static',
+]
 
 TIMEZONE = 'America/New_York'
 
