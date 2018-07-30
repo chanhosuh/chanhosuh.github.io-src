@@ -15,6 +15,8 @@ EXTRA_PATH_METADATA = {
     'static': {'path': 'static'},
 }
 
+READERS = {"html": None}
+
 TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
