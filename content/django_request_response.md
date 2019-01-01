@@ -3,20 +3,20 @@ Date: 2018-09-01
 Category: Django, Python, WSGI, REST  
 Status: draft  
 
-One of the advantages of using a web framework like Django is it does so many things out of the box for you.  The big disadvantage, of course, is that one day something mysterious will happen that you don't seem to have a hope of understanding.  For me, one of the things that has come to bite me a few times when I'm trying to test, is understanding exactly how requests get propagated through Django's middleware chain, gets processed by the view(s), returns a response which is propagated through the rest of the middleware.
+A benefit of using a web framework like Django is it does so many things out of the box for you.  The big disadvantage, of course, is that one day something mysterious will happen, and you have no idea why.  For me, one of the things that has come to bite me a few times, particularly during unit tests, is understanding exactly how requests get propagated through Django's middleware chain, gets processed by the view(s), and returns a response which continues through the rest of the middleware.
 
-Turns out this is implemented in a fairly straighforward way, but it does involve knowing a bit about WSGI (to understand how the middleware stack kicks off), and understanding Django's view & template interaction (which most Django devs should have a decent intuitive grasp of).
+The implementation turns out to be fairly straighforward, but it does involve knowing a bit about WSGI, and understanding Django's view & template interaction.
 
+For reference, my code snippets are from Django 2.1, but this part of the codebase hasn't changed much for some years.
 
-The source code I'm referring to will be Django v2.1, but this part of the codebase hasn't changed much for some years.
 
 ## WSGI
 
-Let's start with a quick summary of the Web Server Gateway Interface (WSGI).  For further details and rationale behind the standards, refer to [PEP 333](https://www.python.org/dev/peps/pep-0333/) which is very readable.  
+Let's start with a quick summary of the Web Server Gateway Interface (WSGI).  For a readable intro with more details and rationale behind the standards, I would just recommend reading [PEP 333](https://www.python.org/dev/peps/pep-0333/).
 
-WSGI is a standard which prescribes an interface for interaction between a web server and a Python application, typically a web framework like Django, Flask, etc.  There are many implementations of WSGI, including `uWSGI` and `Gunicorn`.  
+WSGI is a standard which prescribes an interface for interaction between a web server and a Python application, typically a web framework like Django, Flask, etc.  Two popular implementations of WSGI are uWSGI and Gunicorn. 
 
-Essentially a web server either runs a WSGI implementation, or connects to it if they are in separate containers.  The WSGI implementation will run a Python process which invokes a callable provided by the Python application.  The WSGI implementation handles finding the Python module with the callable and running it.
+Essentially, a web server either runs a WSGI implementation, or connects to it if they are in separate containers.  The WSGI implementation runs a Python process which imports a callable provided by the Python application and invokes it upon every request.
 
 Thus WSGI requires:
 
@@ -30,18 +30,19 @@ Thus WSGI requires:
       start_response(status, response_headers)
       return ['Hello world!\n']
   ```
-   
-  - `environ` is a dictionary of environment variables, e.g. REQUEST\_METHOD, PATH\_INFO, QUERY\_STRING, etc.  
-  - `start_response` is a Python callable provided by the WSGI implementation.  More below.  
-  - The return value must be an iterable of strings.
 
   The example uses a function to demonstrate the signature, but the callable can be any Python object with a `__call__` method with the same signature.  
       
+   
+- `environ`: a dictionary of environment variables, e.g. REQUEST\_METHOD, PATH\_INFO, QUERY\_STRING, etc.  
+- `start_response`: a Python callable provided by the WSGI implementation.  More below.  
+- The return value must be an iterable of strings.
+
 - Its own callable, `start_response`, which it hands off to the application.  Its arguments are:
   - `status`: a string giving status code and reason
   - `response_headers`: a list of valid header key-value pairs
 
-  I won't say much more on this, as it's not needed.  Consult the PEP for futher details.
+I won't say much more on this, as it's not needed.  Consult the PEP for futher details.
 
 
 ### WSGIHandler
