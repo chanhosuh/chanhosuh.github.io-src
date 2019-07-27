@@ -56,6 +56,7 @@ THEME = 'blue-penguin'
 # items in MENU_INTERNAL_PAGES
 DISPLAY_HOME = False
 DISPLAY_PAGES_ON_MENU = False
+DISPLAY_FOOTER = False
 
 MENUITEMS = (
     ('Home', '/'),
