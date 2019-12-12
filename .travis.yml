@@ -1,16 +1,19 @@
-language: python
-python:
-  - "2.7"
+dist: xenial
+
+language: node_js
+
 branches:
   only:
-  - master
+    - master
+
 install:
-- pip install -r requirements.txt
-before_script:
-- pelican-themes -i ./themes/blue-penguin
+  - npm install
+
 script:
-- make publish
+  - npx gatsby build
+
 after_success: ./deploy.sh
+
 env:
   global:
-  - secure: JMhzeICKzoTJTbvr8HgFGWe5r8q6oQJXv7jIEq7IUUAP6UXAgD3JE6g4HuDaVSn02VOpP1bSzZb6FuEzPJ+kW6+/CC7yxlCrANOg3RFmbDGUk9hsRaTSQ7fOA3C/alFWN+CBf8qKiB80tT1UoNWwYYeMuOtoqRyKh2tyVspTH4YyAdlAdZ91CACvNjns219tTr7RCyuvSgJB4sgCeru0ecLuxrZJvV6RE+7mAen3rEVZOuCtmBM6e6+KaKBOZM2v0ZMdcPDwCpWQShD3EyJ36MAh8Jhn8pOgEKePaDqfe6YPkLpIdGZPhiM/HsTUBORCAa/J6jYY36xfphbgmmlK8Mx/+LXU4fZ3t+m/5qOr74yLkANrz6nr+U5eb/5Xd7fMsS4GtRlmVyOUZLdvk0BerMxRbijGTtoqxnfmEX1oSLO93l1HGM8fSiUK7cDA8PyVlqJVc/peKkGk2grYyzVc4qQFQgMBOnWo1UAZ2ihab59ri7Q6A8Qu6yqyzVt6mg6Yq01ETKSkj8vYxBVaGp1w2SnR62Qf4PYnOmM7rXq/iE1iNYgyaJ7nfRB/O2JWNlwfBUiEMpGcpk3aQbdEQX39s2fJ+Y++74kkSuYD18qEMMOxTyxSYPWJIMegmUFumooeXpYZXW6BE3fiyq5g5NozF7Bkwjz6IFE5rB+9F+AweE0=
+    - secure: JMhzeICKzoTJTbvr8HgFGWe5r8q6oQJXv7jIEq7IUUAP6UXAgD3JE6g4HuDaVSn02VOpP1bSzZb6FuEzPJ+kW6+/CC7yxlCrANOg3RFmbDGUk9hsRaTSQ7fOA3C/alFWN+CBf8qKiB80tT1UoNWwYYeMuOtoqRyKh2tyVspTH4YyAdlAdZ91CACvNjns219tTr7RCyuvSgJB4sgCeru0ecLuxrZJvV6RE+7mAen3rEVZOuCtmBM6e6+KaKBOZM2v0ZMdcPDwCpWQShD3EyJ36MAh8Jhn8pOgEKePaDqfe6YPkLpIdGZPhiM/HsTUBORCAa/J6jYY36xfphbgmmlK8Mx/+LXU4fZ3t+m/5qOr74yLkANrz6nr+U5eb/5Xd7fMsS4GtRlmVyOUZLdvk0BerMxRbijGTtoqxnfmEX1oSLO93l1HGM8fSiUK7cDA8PyVlqJVc/peKkGk2grYyzVc4qQFQgMBOnWo1UAZ2ihab59ri7Q6A8Qu6yqyzVt6mg6Yq01ETKSkj8vYxBVaGp1w2SnR62Qf4PYnOmM7rXq/iE1iNYgyaJ7nfRB/O2JWNlwfBUiEMpGcpk3aQbdEQX39s2fJ+Y++74kkSuYD18qEMMOxTyxSYPWJIMegmUFumooeXpYZXW6BE3fiyq5g5NozF7Bkwjz6IFE5rB+9F+AweE0=

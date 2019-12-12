@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 BRANCH=master
 TARGET_REPO=chanhosuh/chanhosuh.github.io.git
-PELICAN_OUTPUT_FOLDER=output
+PELICAN_OUTPUT_FOLDER=public
 
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     echo -e "Starting to deploy to Github Pages\n"
