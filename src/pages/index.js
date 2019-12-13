@@ -24,35 +24,34 @@ const About = props => {
   return (
     <Layout>
       <div className={aboutStyle.main}>
-        <div className={aboutStyle.izquierda}>
+        <div className={aboutStyle.left}>
           <div className={aboutStyle.imagen}>
-            {" "}
             <Img
               className={aboutStyle.img}
               fluid={props.data.file.childImageSharp.fluid}
             />
           </div>
+        </div>
+        <div className={aboutStyle.right}>
           <div className={aboutStyle.texto}>
             <div className={aboutStyle.iconos}>
               <i className="fas fa-map-marker-alt fa-sm"></i>
-              <p>&nbsp; New York, New York</p>
+              &nbsp; New York, New York
             </div>
             <div className={aboutStyle.iconos}>
               <i className="fas fa-graduation-cap fa-sm"></i>
-              <p>Cornell, UC Davis, Rutgers</p>
+              Cornell, UC Davis, Rutgers
             </div>
             <div className={aboutStyle.iconos}>
               <i className="fas fa-code fa-sm"></i>
-              <p>Python, Javascript</p>
+              Python, Javascript
             </div>
           </div>
-        </div>
-        <div className={aboutStyle.derecha}>
           <p>
-            <strong>Email:</strong> csuh dot web at gmail dot com
+            <i class="fas fa-envelope"></i> csuh dot web at gmail dot com
             <br />
-            <strong>Resume:</strong> <a href="/resume.html">html</a>{" "}
-            <a href="/resume.pdf">pdf</a>
+            <i class="fas fa-file"></i>
+            <a href="/resume.html">html</a> | <a href="/resume.pdf">pdf</a>
           </p>
           <p>
             Currently I work at a commercial bank developing Python-based tools

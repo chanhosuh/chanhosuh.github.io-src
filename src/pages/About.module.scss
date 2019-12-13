@@ -18,7 +18,7 @@ h2 {
   }
 }
 
-.izquierda {
+.left {
   display: flex;
   flex-direction: column;
   font-size: 0.8rem;
@@ -38,14 +38,15 @@ h2 {
   }
   .texto {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-self: center;
     justify-content: center;
   }
 
   .iconos {
-    flex-direction: column;
-    float: left;
+    display: flex;
+    flex-direction: row;
+    // float: left;
 
     p {
       padding: 0rem 1rem 0;
@@ -54,13 +55,12 @@ h2 {
   }
 }
 
-.derecha {
+.right {
   padding: 1.4rem;
   flex-direction: row;
   flex: 2;
   font-size: 1.2rem;
   text-align: justify;
-  margin: auto;
 }
 
 .social {
