@@ -53,8 +53,10 @@ const About = props => {
             <br />
             <strong>Online:</strong>{" "}
             <a href="https://github.com/chanhosuh">GitHub</a>,{" "}
-            <a href="https://stackoverflow.com/users/1175053">StackOverflow</a>,{" "}
-            <a href="https://www.linkedin.com/in/chanhosuh">LinkedIn</a>
+            <a href="https://stackoverflow.com/users/story/1175053?view=Cv">
+              StackOverflow
+            </a>
+            , <a href="https://www.linkedin.com/in/chanhosuh">LinkedIn</a>
             <br />
             <strong>Resume:</strong> <a href="/resume.html">html</a>{" "}
             <a href="/resume.pdf">pdf</a>
