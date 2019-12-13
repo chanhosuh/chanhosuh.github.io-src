@@ -33,44 +33,35 @@ const About = props => {
           </div>
         </div>
         <div className={aboutStyle.right}>
-          <div className={aboutStyle.texto}>
-            <div className={aboutStyle.iconos}>
-              <i className="fas fa-map-marker-alt fa-sm"></i>
-              &nbsp; New York, New York
-            </div>
-            <div className={aboutStyle.iconos}>
-              <i className="fas fa-graduation-cap fa-sm"></i>
-              Cornell, UC Davis, Rutgers
-            </div>
-            <div className={aboutStyle.iconos}>
-              <i className="fas fa-code fa-sm"></i>
-              Python, Javascript
-            </div>
-          </div>
-          <p>
-            <i class="fas fa-envelope"></i> csuh dot web at gmail dot com
-            <br />
+          <div>
+            <i class="fas fa-envelope"></i> csuh.web at gmail
             <i class="fas fa-file"></i>
             <a href="/resume.html">html</a> | <a href="/resume.pdf">pdf</a>
-          </p>
-          <p>
-            Currently I work at a commercial bank developing Python-based tools
-            for data scientists and engineers. Previously I was mainly wrangling
-            with backend stuff in Python and Django. I spent several years
-            working on{" "}
-            <a href="https://en.wikipedia.org/wiki/Wall_Street">Wall Street</a>,
-            supporting{" "}
-            <a href="https://en.wikipedia.org/wiki/Trader_(finance)">trading</a>{" "}
-            in various capacities. Before that, I was a full-fledged academic,
-            spending a lot of time{" "}
-            <a href="https://en.wikipedia.org/wiki/Topology">
-              turning things inside-out.
-            </a>
-          </p>
-          <p>
-            In my spare time, I enjoy working on Bitcoin and Ethereum
-            development.
-          </p>
+          </div>
+          <div>
+            <p>
+              Currently I work at a commercial bank developing Python-based
+              tools for data scientists and engineers. Previously I was mainly
+              wrangling with backend stuff in Python and Django. I spent several
+              years working on{" "}
+              <a href="https://en.wikipedia.org/wiki/Wall_Street">
+                Wall Street
+              </a>
+              , supporting{" "}
+              <a href="https://en.wikipedia.org/wiki/Trader_(finance)">
+                trading
+              </a>{" "}
+              in various capacities. Before that, I was a full-fledged academic,
+              spending a lot of time{" "}
+              <a href="https://en.wikipedia.org/wiki/Topology">
+                turning things inside-out.
+              </a>
+            </p>
+            <p>
+              In my spare time, I enjoy working on Bitcoin and Ethereum
+              development.
+            </p>
+          </div>
         </div>
       </div>
     </Layout>
