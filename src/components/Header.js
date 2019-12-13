@@ -39,6 +39,9 @@ const Header = () => {
           <a href="https://github.com/chanhosuh">
             <i className="fab fa-github"></i>
           </a>
+          <a href="https://stackoverflow.com/users/story/1175053?view=Cv">
+            <i className="fab fa-stackoverflow"></i>
+          </a>
           <a href="https://twitter.com/chanhosuh">
             <i className="fab fa-twitter"></i>
           </a>
