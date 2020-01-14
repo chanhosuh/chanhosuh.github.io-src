@@ -4,7 +4,7 @@ body {
 }
 hr {
   color: black;
-  margin-top: 2rem;
+  // margin-top: 2rem;
 }
 h1 {
   font-size: 5rem;
@@ -14,13 +14,8 @@ h1 {
 
 .attr {
   font-family: "Anonymous Pro", monospace;
-  background-color: #c3d6ff;
   font-size: 1.2rem;
   margin: 0 0.5rem 0 0.5rem;
-}
-
-.attr:hover {
-  background-color: transparent;
 }
 
 .icons {
