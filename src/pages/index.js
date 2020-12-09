@@ -40,10 +40,11 @@ const About = props => {
           </div>
           <div>
             <p>
-              Currently I work at a commercial bank developing Python-based
-              tools for data scientists and engineers. Previously I was mainly
-              wrangling with backend stuff in Python and Django. I spent several
-              years working on{" "}
+              Currently I work at <a href="https://apy.finance">APY.Finance</a>, developing smart contracts and
+              doing whatever else needs to be done.
+            </p>
+            <p>
+              I spent several years working on{" "}
               <a href="https://en.wikipedia.org/wiki/Wall_Street">
                 Wall Street
               </a>
@@ -58,8 +59,8 @@ const About = props => {
               </a>
             </p>
             <p>
-              In my spare time, I enjoy working on Bitcoin and Ethereum
-              development.
+              In my spare time, I enjoy reading and hanging out with the folks at{" "}
+              <a href="https://www.meetup.com/nyc-blockchain-devs/">NYC Blockchain Devs</a>.
             </p>
           </div>
         </div>
