@@ -6,7 +6,7 @@ PELICAN_OUTPUT_FOLDER=public
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     echo -e "Starting to deploy to Github Pages\n"
     if [ "$TRAVIS" == "true" ]; then
-        git config --global user.email "travis@travis-ci.org"
+        git config --global user.email "travis@travis-ci.com"
         git config --global user.name "Travis"
     fi
     #using token clone gh-pages branch
